@@ -1,0 +1,191 @@
+/* ===========================
+   NAVIGATION
+=========================== */
+
+.navbar {
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    backdrop-filter: blur(12px);
+
+    background: color-mix(in srgb,
+            var(--color-background) 80%,
+            transparent);
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__container {
+
+    width: min(92%, var(--container-width));
+
+    margin: auto;
+
+    height: 72px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.navbar__logo {
+
+    font-family: var(--font-heading);
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+}
+
+.navbar__links {
+
+    display: flex;
+
+    gap: var(--space-lg);
+
+    align-items: center;
+}
+
+.navbar__link {
+
+    color: var(--color-text-muted);
+
+    transition: color var(--transition-fast);
+}
+
+.navbar__link:hover {
+
+    color: var(--color-text);
+}
+
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero {
+
+    padding-top: 7rem;
+
+    padding-bottom: 6rem;
+}
+
+.hero__title {
+
+    font-family: var(--font-heading);
+
+    font-size: var(--font-display);
+
+    line-height: .95;
+
+    margin-bottom: var(--space-lg);
+}
+
+.hero__description {
+
+    max-width: 650px;
+
+    font-size: var(--font-body-lg);
+
+    color: var(--color-text-muted);
+}
+
+
+/* ===========================
+   PROJECT CARD
+=========================== */
+
+.project-card {
+
+    margin-bottom: 7rem;
+}
+
+.project-card__image {
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    margin-bottom: var(--space-lg);
+
+    background: var(--color-surface);
+}
+
+.project-card__image img {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+
+    transition: transform .4s ease;
+}
+
+.project-card:hover img {
+
+    transform: scale(1.02);
+}
+
+.project-card__title {
+
+    font-family: var(--font-heading);
+
+    font-size: var(--font-h2);
+
+    margin-bottom: .75rem;
+}
+
+.project-card__chips {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: .5rem;
+
+    margin-bottom: 1rem;
+}
+
+.project-chip {
+
+    border: 1px solid var(--color-border);
+
+    padding: .4rem .8rem;
+
+    border-radius: 999px;
+
+    font-size: .85rem;
+
+    color: var(--color-text-muted);
+}
+
+.project-card__description {
+
+    max-width: 700px;
+
+    color: var(--color-text-muted);
+
+    margin-bottom: 1.25rem;
+}
+
+.project-card__button {
+
+    display: inline-flex;
+
+    gap: .5rem;
+
+    align-items: center;
+
+    font-weight: 600;
+}
+
+.project-card__button:hover {
+
+    gap: .8rem;
+}

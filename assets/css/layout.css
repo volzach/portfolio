@@ -1,0 +1,38 @@
+body {
+
+    font-family: var(--font-body);
+
+    background: var(--color-background);
+
+    color: var(--color-text);
+
+    transition:
+        background var(--transition-normal),
+        color var(--transition-normal);
+
+    line-height: 1.6;
+}
+
+.container {
+
+    width: min(92%, var(--container-width));
+
+    margin-inline: auto;
+}
+
+.container--narrow {
+
+    width: min(92%, var(--container-narrow));
+
+    margin-inline: auto;
+}
+
+section {
+
+    padding-block: var(--space-2xl);
+}
+
+main {
+
+    overflow: hidden;
+}
