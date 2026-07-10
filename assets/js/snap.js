@@ -1,4 +1,5 @@
 const sections = [...document.querySelectorAll("section.snap-section[id^='snap-section']")];
+const scrollCues = [...document.querySelectorAll(".hero__scroll")];
 
 if (sections.length === 0) {
     console.warn("No snap sections found.");
@@ -52,6 +53,18 @@ window.addEventListener("scroll", () => {
 
     }, 75);
 
+});
+
+scrollCues.forEach((scrollCue) => {
+    scrollCue.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const currentIndex = sections.findIndex((section) => section.contains(scrollCue));
+
+        if (currentIndex >= 0 && currentIndex < sections.length - 1) {
+            snapTo(currentIndex + 1);
+        }
+    });
 });
 
 function snapTo(index) {
