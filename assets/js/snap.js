@@ -1,4 +1,8 @@
-const sections = [...document.querySelectorAll(".snap-section")];
+const sections = [...document.querySelectorAll("section.snap-section[id^='snap-section']")];
+
+if (sections.length === 0) {
+    console.warn("No snap sections found.");
+}
 
 let currentSection = 0;
 let isAnimating = false;
