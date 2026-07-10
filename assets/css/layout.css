@@ -54,6 +54,8 @@ section {
 
     padding-block: var(--space-2xl);
 
+    scroll-margin-top: 96px;
+
 }
 
 .snap-section {

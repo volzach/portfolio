@@ -28,7 +28,36 @@
 
 </head>
 
-<body>
+<body id="top" data-page="home">
+
+    <header class="navbar" data-navbar>
+
+        <div class="navbar__container">
+
+            <div class="navbar__group">
+
+                <a class="navbar__logo navbar__logo--disabled"
+                   href="#top"
+                   data-nav-brand
+                   aria-disabled="true"
+                   tabindex="-1">Zach Vollmer</a>
+
+                <nav class="navbar__links" aria-label="Primary navigation">
+                    <a class="navbar__link" href="#projects">Projects</a>
+                    <a class="navbar__link" href="#about">About</a>
+                    <a class="navbar__link" href="#contact">Contact</a>
+                </nav>
+
+            </div>
+
+            <a class="navbar__link navbar__link--resume"
+               href="https://drive.google.com/"
+               target="_blank"
+               rel="noreferrer">Resume ↗</a>
+
+        </div>
+
+    </header>
 
     <main>
 
@@ -53,7 +82,7 @@
     </section>
 
     <!-- PROJECTS -->
-    <section class="projects snap-section" id="snap-section-2">
+    <section class="projects snap-section" id="projects">
 
         <div class="container">
 
@@ -93,8 +122,37 @@
 
     </section>
 
+    <section class="snap-section" id="about">
+
+        <div class="container container--narrow">
+
+            <h2 class="project-card__title">About</h2>
+
+            <p class="project-card__description">
+                I’m a designer and developer exploring thoughtful digital experiences through experimental projects and personal storytelling.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="snap-section" id="contact">
+
+        <div class="container container--narrow">
+
+            <h2 class="project-card__title">Contact</h2>
+
+            <p class="project-card__description">
+                Reach out for collaborations, questions, or to share a new idea.
+            </p>
+
+        </div>
+
+    </section>
+
 </main>
 
 <script src="assets/js/snap.js"></script>
+<script src="assets/js/navbar.js"></script>
 
 </body>
