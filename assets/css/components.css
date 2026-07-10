@@ -138,7 +138,9 @@
 
     font-size: var(--font-h2);
 
-    margin-bottom: .75rem;
+    margin-bottom: .4rem;
+
+    margin-top: -.2rem;
 }
 
 .project-card__chips {
@@ -147,9 +149,9 @@
 
     flex-wrap: wrap;
 
-    gap: .5rem;
+    gap: .45rem;
 
-    margin-bottom: 1rem;
+    margin-bottom: .75rem;
 }
 
 .project-chip {
@@ -171,7 +173,9 @@
 
     color: var(--color-text-muted);
 
-    margin-bottom: 1.25rem;
+    margin-bottom: .75rem;
+
+    line-height: 1.5;
 }
 
 .project-card__button {

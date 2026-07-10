@@ -1,3 +1,25 @@
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+}
+
+html {
+
+    scroll-snap-type: y mandatory;
+
+    scroll-behavior: smooth;
+}
+
+.hero,
+.projects {
+
+    scroll-snap-align: start;
+}
+
 body {
 
     font-family: var(--font-body);
