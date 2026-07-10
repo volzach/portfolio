@@ -117,6 +117,29 @@
 }
 
 /* ===========================
+   PROJECT PAGE
+=========================== */
+
+.project-page__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-page__image img {
+    width: 100%;
+    max-width: 760px;
+    display: block;
+    border-radius: var(--radius-lg);
+    object-fit: contain;
+    transition: none;
+}
+
+.project-page__image img:hover {
+    transform: none;
+}
+
+/* ===========================
    PROJECT CARD
 =========================== */
 
