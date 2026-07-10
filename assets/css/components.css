@@ -85,6 +85,7 @@
 .navbar__link {
 
     color: var(--color-text-muted);
+    font-family: var(--font-body);
 
     transition: color var(--transition-fast);
 
@@ -166,6 +167,7 @@
     margin-top: 6rem;
 
     font-size: .8rem;
+    font-family: var(--font-body);
 
     color: var(--color-text-muted);
 
@@ -347,10 +349,78 @@
 
     align-items: center;
 
+    font-family: var(--font-body);
     font-weight: 600;
 }
 
 .project-card__button:hover {
 
     gap: .8rem;
+}
+
+@media (max-width: 768px) {
+    .navbar__container {
+        height: auto;
+        min-height: 72px;
+        padding-block: .8rem;
+        flex-wrap: wrap;
+        gap: .75rem;
+    }
+
+    .navbar__group {
+        width: 100%;
+        justify-content: space-between;
+        gap: .75rem;
+        flex-wrap: wrap;
+    }
+
+    .navbar__links {
+        gap: .8rem;
+        flex-wrap: wrap;
+    }
+
+    .navbar__logo {
+        font-size: 1rem;
+    }
+
+    .navbar__link--resume {
+        margin-left: auto;
+        font-size: .95rem;
+    }
+
+    .hero {
+        align-items: flex-start;
+        padding-block: 5rem 4rem;
+    }
+
+    .hero__card {
+        max-width: none;
+        padding-top: 1.5rem;
+    }
+
+    .hero__title {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+    }
+
+    .hero__description {
+        font-size: 1rem;
+    }
+
+    .hero__scroll {
+        margin-top: 3rem;
+    }
+
+    .hero__floating-layer {
+        display: none;
+    }
+
+    .project-card {
+        margin-top: 0;
+        margin-bottom: 2.5rem;
+    }
+
+    .project-card__button {
+        flex-wrap: wrap;
+        line-height: 1.4;
+    }
 }
