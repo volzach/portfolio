@@ -9,14 +9,7 @@
 
 html {
 
-    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
-}
-
-.hero,
-.projects {
-
-    scroll-snap-align: start;
 }
 
 body {
@@ -60,8 +53,6 @@ body {
 section {
 
     padding-block: var(--space-2xl);
-
-    scroll-snap-align: start;
 
 }
 
