@@ -13,43 +13,46 @@ if (floatingLayer) {
     const driftX = Number(item.dataset.driftX || 0);
     const driftY = Number(item.dataset.driftY || 0);
     const duration = Number(item.dataset.duration || 7);
+    const amplitude = Number(item.dataset.amplitude || 1);
 
-    item.style.left = left;
-    item.style.top = top;
-    item.style.width = `${width}px`;
+    item.style.setProperty('--float-left', left);
+    item.style.setProperty('--float-top', top);
+    item.style.setProperty('--float-width', `${width}px`);
     item.style.setProperty('--float-rotate', rotate);
     item.style.setProperty('--float-opacity', opacity);
-
-    const startOffset = index * 0.75;
-    item.animate([
-      { transform: `translate3d(0, 0, 0) rotate(${rotate})` },
-      { transform: `translate3d(${driftX}px, ${driftY}px, 0) rotate(${rotate})` },
-      { transform: `translate3d(0, 0, 0) rotate(${rotate})` }
-    ], {
-      duration: duration * 1000,
-      iterations: Infinity,
-      easing: 'ease-in-out',
-      delay: startOffset * 1000
-    });
+    item.style.setProperty('--float-drift-x', `${driftX * amplitude}px`);
+    item.style.setProperty('--float-drift-y', `${driftY * amplitude}px`);
+    item.style.setProperty('--float-duration', `${duration}s`);
+    item.style.setProperty('--float-index', String(index));
   });
 
-  const updateParallax = () => {
-    const rect = heroSection?.getBoundingClientRect();
-    if (!rect) return;
+  let lastTime = 0;
 
-    const scrollProgress = Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight));
+  const updateMotion = (timestamp) => {
+    const rect = heroSection?.getBoundingClientRect();
+    const scrollProgress = rect
+      ? Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight))
+      : 0;
+
+    const elapsed = (timestamp - (lastTime || timestamp)) / 1000;
+    lastTime = timestamp;
 
     floatItems.forEach((item, index) => {
       const driftX = Number(item.dataset.driftX || 0);
       const driftY = Number(item.dataset.driftY || 0);
-      const offset = scrollProgress * 24;
-      const x = driftX * (1 - scrollProgress) - offset * (index % 2 === 0 ? 1 : -1);
-      const y = driftY * (1 - scrollProgress) + offset * (index % 2 === 0 ? 0.4 : -0.4);
+      const duration = Number(item.dataset.duration || 7);
+      const amplitude = Number(item.dataset.amplitude || 1);
+      const wave = Math.sin((timestamp / 1000 / duration) * Math.PI * 2 + index * 0.8);
+      const parallaxX = scrollProgress * 24 * (index % 2 === 0 ? 1 : -1);
+      const parallaxY = scrollProgress * 8 * (index % 2 === 0 ? 0.4 : -0.4);
+      const x = driftX * amplitude * wave + parallaxX;
+      const y = driftY * amplitude * Math.cos((timestamp / 1000 / duration) * Math.PI * 2 + index * 0.8) + parallaxY;
+
       item.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${item.style.getPropertyValue('--float-rotate') || '0deg'})`;
     });
+
+    requestAnimationFrame(updateMotion);
   };
 
-  window.addEventListener('scroll', updateParallax, { passive: true });
-  window.addEventListener('resize', updateParallax);
-  updateParallax();
+  requestAnimationFrame(updateMotion);
 }
