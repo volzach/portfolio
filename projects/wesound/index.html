@@ -18,89 +18,24 @@
     <link rel="stylesheet" href="../../assets/css/animations.css">
 </head>
 
-<body id="top" data-page="project">
-
-    <header class="navbar" data-navbar>
-
-        <div class="navbar__container">
-
-            <div class="navbar__group">
-
-                <a class="navbar__logo navbar__logo--disabled"
-                   href="../../index.html"
-                   data-nav-brand
-                   aria-disabled="true"
-                   tabindex="-1">Back to Zach</a>
-
-                <nav class="navbar__links" aria-label="Primary navigation">
-                    <a class="navbar__link" href="../../index.html#projects">Projects</a>
-                    <a class="navbar__link" href="../../index.html#about">About</a>
-                    <a class="navbar__link" href="../../index.html#contact">Contact</a>
-                </nav>
-
-            </div>
-
-            <a class="navbar__link navbar__link--resume"
-               href="https://drive.google.com/"
-               target="_blank"
-               rel="noreferrer">Resume ↗</a>
-
-        </div>
-
-    </header>
-
+<body>
     <main>
         <section class="hero snap-section" id="snap-section-1">
             <div class="hero__floating-layer" aria-hidden="true">
-                <figure class="hero-float-item"
-                data-left="7%"
-                data-top="16%"
-                data-width="185"
-                data-rotate="-12deg"
-                data-opacity="0.92"
-                data-drift-x="4"
-                data-drift-y="7"
-                data-duration="9"
-                data-amplitude="0.9">
-                    <img src="images/wesound peach.png" alt="floaty peachy">
+                <figure class="hero-float-item" data-left="8%" data-top="18%" data-width="180" data-rotate="-8deg" data-opacity="0.92" data-drift-x="12" data-drift-y="8" data-duration="7.5">
+                    <img src="images/wesound classic.png" alt="">
                 </figure>
 
-                <figure class="hero-float-item"
-                data-left="74%"
-                data-top="14%"
-                data-width="210"
-                data-rotate="10deg"
-                data-opacity="0.9"
-                data-drift-x="-11"
-                data-drift-y="3"
-                data-duration="8"
-                data-amplitude=".85">
-                    <img src="images/wesound toadYellow.png" alt="floaty yellow toad">
+                <figure class="hero-float-item" data-left="74%" data-top="16%" data-width="150" data-rotate="10deg" data-opacity="0.9" data-drift-x="-9" data-drift-y="10" data-duration="8.2">
+                    <img src="images/wesound toadBlue.png" alt="">
                 </figure>
 
-                <figure class="hero-float-item"
-                data-left="10%"
-                data-top="68%"
-                data-width="180"
-                data-rotate="-5deg"
-                data-opacity="0.9"
-                data-drift-x="-9"
-                data-drift-y="5"
-                data-duration="7.5"
-                data-amplitude="0.8">
-                    <img src="images/wesound luigi.png" alt="floaty classic guy">
+                <figure class="hero-float-item" data-left="20%" data-top="68%" data-width="140" data-rotate="6deg" data-opacity="0.82" data-drift-x="6" data-drift-y="-8" data-duration="6.8">
+                    <img src="images/wesound classic.png" alt="">
                 </figure>
 
-                <figure class="hero-float-item"
-                data-left="75%" data-top="64%"
-                data-width="200"
-                data-rotate="8deg"
-                data-opacity="0.84"
-                data-drift-x="-3"
-                data-drift-y="11"
-                data-duration="8.4"
-                data-amplitude="0.7">
-                    <img src="images/wesound mario.png" alt="floaty mario">
+                <figure class="hero-float-item" data-left="64%" data-top="64%" data-width="130" data-rotate="-5deg" data-opacity="0.84" data-drift-x="-7" data-drift-y="6" data-duration="7.2">
+                    <img src="images/wesound toadBlue.png" alt="">
                 </figure>
             </div>
 
@@ -116,19 +51,15 @@
         </section>
 
         <section class="snap-section" id="snap-section-2">
-            <div class="project-card__image">
-                    <img
-                        src="images/wesound dark.png"
-                        alt="WeSound showcase image">
-                </div>
-
-                <h2 class="project-card__title">
-                    All sound file management in ONE place.
-                </h2>
-
+            <div class="container container--narrow project-page__image">
+                <img src="images/wesound classic.png" alt="Project Cover">
+            </div>
+            <div class="container container--narrow">
+                <h2 class="project-card__title">Editing Your Wii mod soundtrack used to be a hassle.</h2>
                 <p class="project-card__description">
-                    Never leave WeSound. Patch your .brsar and edit your .brstm files all in WeSound.
-                    </p>
+                    Now it's not! WeSound is able to seamlessly convert .wav to .brstm, add/remove loop points, and even edit NSMBW bahps, all in the same program.
+                </p>
+            </div>
         </section>
 
         <section class="snap-section" id="snap-section-3">
@@ -138,7 +69,8 @@
             <div class="container container--narrow">
                 <h2 class="project-card__title">All sound file management in ONE place.</h2>
                 <p class="project-card__description">
-                    </p>
+                    Never leave WeSound, as you can patch your .brsar and edit your .brstm files all in the WeSound interface.
+                </p>
             </div>
         </section>
 
@@ -165,7 +97,6 @@
     </main>
 
     <script src="../../assets/js/snap.js"></script>
-    <script src="../../assets/js/navbar.js"></script>
     <script src="../../assets/js/hero-floats.js"></script>
 </body>
 </html>
