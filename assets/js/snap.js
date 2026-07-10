@@ -56,7 +56,7 @@ window.addEventListener("scroll", () => {
 });
 
 scrollCues.forEach((scrollCue) => {
-    scrollCue.addEventListener("click", (event) => {
+    const handleScrollCue = (event) => {
         event.preventDefault();
 
         const currentIndex = sections.findIndex((section) => section.contains(scrollCue));
@@ -64,16 +64,30 @@ scrollCues.forEach((scrollCue) => {
         if (currentIndex >= 0 && currentIndex < sections.length - 1) {
             snapTo(currentIndex + 1);
         }
+    };
+
+    scrollCue.addEventListener("click", handleScrollCue);
+    scrollCue.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            handleScrollCue(event);
+        }
     });
 });
 
 function snapTo(index) {
 
+    if (index < 0 || index >= sections.length || isAnimating) {
+        return;
+    }
+
     isAnimating = true;
 
-    sections[index].scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+    const targetSection = sections[index];
+    const top = targetSection.getBoundingClientRect().top + window.scrollY - 24;
+
+    window.scrollTo({
+        top,
+        behavior: "smooth"
     });
 
     currentSection = index;
@@ -82,6 +96,6 @@ function snapTo(index) {
 
         isAnimating = false;
 
-    }, 600);
+    }, 700);
 
 }
