@@ -70,9 +70,16 @@
 
 .hero {
 
-    padding-top: 7rem;
+    min-height: 100vh;
 
-    padding-bottom: 6rem;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-bottom: 1px solid var(--color-border);
+
 }
 
 .hero__title {

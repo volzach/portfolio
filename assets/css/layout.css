@@ -9,8 +9,7 @@
 
 html {
 
-    scroll-snap-type: y mandatory;
-
+    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
 }
 
@@ -40,6 +39,15 @@ body {
     width: min(92%, var(--container-width));
 
     margin-inline: auto;
+
+}
+
+.container--wide {
+
+    width: min(94%, var(--container-wide));
+
+    margin-inline: auto;
+
 }
 
 .container--narrow {
@@ -52,6 +60,9 @@ body {
 section {
 
     padding-block: var(--space-2xl);
+
+    scroll-snap-align: start;
+
 }
 
 main {
