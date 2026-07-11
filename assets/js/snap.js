@@ -1,4 +1,4 @@
-const sections = [...document.querySelectorAll("section.snap-section[id^='snap-section']")];
+const sections = [...document.querySelectorAll("section.snap-section")];
 const scrollCues = [...document.querySelectorAll(".hero__scroll")];
 
 if (sections.length === 0) {
