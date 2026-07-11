@@ -33,6 +33,11 @@ if (floatingLayer) {
       tooltip.textContent = altText;
       item.appendChild(tooltip);
     }
+
+    item.addEventListener('mouseenter', () => item.classList.add('is-hovered'));
+    item.addEventListener('mouseleave', () => item.classList.remove('is-hovered'));
+    item.addEventListener('focus', () => item.classList.add('is-hovered'));
+    item.addEventListener('blur', () => item.classList.remove('is-hovered'));
   });
 
   let lastTime = 0;
