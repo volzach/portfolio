@@ -230,13 +230,14 @@
     background: transparent;
     image-rendering: auto;
     -webkit-mask-image: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
 }
 
 .hero-float-tooltip {
     position: absolute;
     left: 50%;
     top: -0.35rem;
-    transform: translate(-50%, -100%) rotate(var(--float-rotate, 0deg));
+    transform: translate(-50%, -100%);
     opacity: 0;
     pointer-events: none;
     padding: .45rem .6rem;
@@ -257,7 +258,7 @@
 .hero-float-item:focus-within .hero-float-tooltip,
 .hero-float-item.is-hovered .hero-float-tooltip {
     opacity: 1;
-    transform: translate(-50%, -120%) rotate(var(--float-rotate, 0deg));
+    transform: translate(-50%, -120%);
 }
 
 .hero-float-item:hover,
