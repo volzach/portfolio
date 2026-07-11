@@ -6,19 +6,17 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Zach Vollmer</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/variables.css">
@@ -36,11 +34,8 @@
 
             <div class="navbar__group">
 
-                <a class="navbar__logo navbar__logo--disabled"
-                   href="#top"
-                   data-nav-brand
-                   aria-disabled="true"
-                   tabindex="-1">Zach Vollmer</a>
+                <a class="navbar__logo navbar__logo--disabled" href="#top" data-nav-brand aria-disabled="true"
+                    tabindex="-1">Zach Vollmer</a>
 
                 <nav class="navbar__links" aria-label="Primary navigation">
                     <a class="navbar__link" href="#projects">Projects</a>
@@ -51,9 +46,8 @@
             </div>
 
             <a class="navbar__link navbar__link--resume"
-               href="https://drive.google.com/file/d/1Gg9tBb1Ll_bZXQrt90rq4x06dj5hFFhl/view?usp=sharing"
-               target="_blank"
-               rel="noreferrer">Resume ↗</a>
+                href="https://drive.google.com/file/d/1Gg9tBb1Ll_bZXQrt90rq4x06dj5hFFhl/view?usp=sharing"
+                target="_blank" rel="noreferrer">Resume ↗</a>
 
         </div>
 
@@ -61,108 +55,129 @@
 
     <main>
 
-    <!-- HERO -->
-    <section class="hero snap-section" id="snap-section-1">
+        <!-- HERO -->
+        <section class="hero snap-section" id="snap-section-1">
 
-        <div class="container">
+            <div class="hero__floating-layer" aria-hidden="true">
+                <figure class="hero-float-item" data-left="8%" data-top="18%" data-width="180" data-rotate="-8deg"
+                    data-opacity="0.92" data-drift-x="11" data-drift-y="8" data-duration="8.5">
+                    <img src="projects\for-hero\srapp.png" alt="NSMBW Speedrunning Resources app icon">
+                </figure>
 
-            <h1 class="hero__title">Zach Vollmer</h1>
+                <figure class="hero-float-item" data-left="64%" data-top="15%" data-width="175" data-rotate="10deg"
+                    data-opacity="0.95" data-drift-x="-9" data-drift-y="5" data-duration="6.2">
+                    <img src="projects\for-hero\wesound.png" alt="WeSound logo">
+                </figure>
 
-            <p class="hero__description">
-                Aspiring designer and problem solver.
-                Working on passion projects and learning new ways to express creativity through digital assets.
-            </p>
+                <figure class="hero-float-item" data-left="20%" data-top="78%" data-width="160" data-rotate="9deg"
+                    data-opacity="0.78" data-drift-x="6" data-drift-y="-8" data-duration="6.8">
+                    <img src="projects\for-hero\tigs.png" alt="Tig Repairs logo">
+                </figure>
 
-            <button type="button" class="hero__scroll">
-                ↓ Projects
-            </button>
+                <figure class="hero-float-item" data-left="74%" data-top="74%" data-width="150" data-rotate="-2deg"
+                    data-opacity="0.95" data-drift-x="-7" data-drift-y="6" data-duration="7.2">
+                    <img src="projects\for-hero\3rd.png" alt="3 Rivers Detailing logo">
+                </figure>
+            </div>
+            <div class="container">
 
-        </div>
+                <h1 class="hero__title">Zach Vollmer</h1>
 
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="projects snap-section" id="projects">
-
-        <div class="container">
-
-            <article class="project-card">
-
-                <div class="project-card__image">
-                    <img
-                        src="projects/wesound/images/wesound dark.png"
-                        alt="WeSound showcase image">
-                </div>
-
-                <h2 class="project-card__title">
-                    WeSound
-                </h2>
-
-                <p class="project-card__description">
-                    An all-in-one sound editing tool for Wii modding.
+                <p class="hero__description">
+                    Aspiring designer and problem solver.
+                    Working on passion projects and learning new ways to express creativity through digital assets.
                 </p>
 
-                <div class="project-card__chips">
-                    <div class="project-chip">C#</div>
-                    <div class="project-chip">WinForms</div>
-                    <div class="project-chip">Filesystems</div>
-                </div>
+                <button type="button" class="hero__scroll">
+                    ↓ Projects
+                </button>
 
-                <a
-                    class="project-card__button"
-                    href="projects/wesound/index.html">
+            </div>
 
-                    Learn more about WeSound →
+        </section>
 
-                </a>
+        <!-- PROJECTS -->
+        <section class="projects snap-section" id="projects">
 
-            </article>
+            <div class="container">
 
-        </div>
+                <article class="project-card">
 
-    </section>
+                    <div class="project-card__image">
+                        <img src="projects/wesound/images/wesound dark.png" alt="WeSound showcase image">
+                    </div>
 
-    <section class="snap-section" id="about">
+                    <h2 class="project-card__title">
+                        WeSound
+                    </h2>
 
-        <div class="container container--narrow">
+                    <p class="project-card__description">
+                        An all-in-one sound editing tool for Wii modding.
+                    </p>
 
-            <h2 class="project-card__title">About Zach</h2>
+                    <div class="project-card__chips">
+                        <div class="project-chip">C#</div>
+                        <div class="project-chip">WinForms</div>
+                        <div class="project-chip">Filesystems</div>
+                    </div>
 
-            <p class="project-card__description">
-                I am a passionate digital designer based in the Phoenix area with my wife and two kitties.
-                I create digital assets ranging from logos, thumbnails, handdrawn UI elements, video game sprites - you name it! I also have collegiate experience in C++, python, and Java.                
-            <button type="button" class="hero__scroll">
-                ↓ Hit me up
-            </button>
-            </p>
+                    <a class="project-card__button" href="projects/wesound/index.html">
 
-        </div>
+                        Learn more about WeSound →
 
-    </section>
+                    </a>
 
-    <section class="snap-section" id="contact">
+                </article>
 
-        <div class="container container--narrow">
+            </div>
 
-            <h2 class="project-card__title">Contact</h2>
+        </section>
 
-            <p class="project-card__description">
-                Interested in working together, or want something you think I can design? I'm looking for experience, so I got you!
-                Email me at volzach@icloud.com for immediate responses, or fill out the form below and I'll get back to you as soon as I can. 
-                I am always open to new opportunities!
+        <section class="snap-section" id="about">
 
-                Socials:
-                <a href="https://www.linkedin.com/in/zach-vollmer/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://discordapp.com/users/v0lza" target="_blank" rel="noopener noreferrer">Discord</a>
-            </p>
+            <div class="container container--narrow">
 
-        </div>
+                <h2 class="project-card__title">About Zach</h2>
 
-    </section>
+                <p class="project-card__description">
+                    I am a passionate digital designer based in the Phoenix area with my wife and two kitties.
+                    I create digital assets ranging from logos, thumbnails, handdrawn UI elements, video game sprites -
+                    you name it! I also have collegiate experience in C++, python, and Java.
+                    <button type="button" class="hero__scroll">
+                        ↓ Hit me up
+                    </button>
+                </p>
 
-</main>
+            </div>
 
-<script src="assets/js/snap.js"></script>
-<script src="assets/js/navbar.js"></script>
+        </section>
+
+        <section class="snap-section" id="contact">
+
+            <div class="container container--narrow">
+
+                <h2 class="project-card__title">Contact</h2>
+
+                <p class="project-card__description">
+                    Interested in working together, or want something you think I can design? I'm looking for
+                    experience, so I got you!
+                    Email me at volzach@icloud.com for immediate responses, or fill out the form below and I'll get back
+                    to you as soon as I can.
+                    I am always open to new opportunities!
+
+                    Socials:
+                    <a href="https://www.linkedin.com/in/zach-vollmer/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://discordapp.com/users/v0lza" target="_blank" rel="noopener noreferrer">Discord</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="assets/js/snap.js"></script>
+    <script src="assets/js/navbar.js"></script>
 
 </body>
