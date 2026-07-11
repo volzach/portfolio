@@ -220,6 +220,7 @@
     transform: translate3d(0, 0, 0) rotate(var(--float-rotate, 0deg));
     transition: filter .2s ease;
     isolation: isolate;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.18));
 }
 
 .hero-float-item img {
@@ -230,7 +231,6 @@
     background: transparent;
     image-rendering: auto;
     -webkit-mask-image: none;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
 }
 
 .hero-float-tooltip {
