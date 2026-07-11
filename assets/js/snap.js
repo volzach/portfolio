@@ -39,13 +39,13 @@ window.addEventListener("scroll", () => {
 
         const rect = current.getBoundingClientRect();
 
-        const movedPastThreshold = rect.top < -window.innerHeight * 0.25;
+        const movedPastThreshold = rect.top < -window.innerHeight * 0.35;
 
         if (movedPastThreshold && currentSection < sections.length - 1) {
 
             snapTo(currentSection + 1);
 
-        } else if (rect.top > window.innerHeight * 0.25 && currentSection > 0) {
+        } else if (rect.top > window.innerHeight * 0.35 && currentSection > 0) {
 
             snapTo(currentSection - 1);
 
