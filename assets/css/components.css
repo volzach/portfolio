@@ -219,6 +219,7 @@
     width: var(--float-width, 160px);
     transform: translate3d(0, 0, 0) rotate(var(--float-rotate, 0deg));
     transition: filter .2s ease;
+    isolation: isolate;
 }
 
 .hero-float-item img {
@@ -227,7 +228,36 @@
     height: auto;
     border-radius: var(--radius-lg);
     box-shadow: 0 18px 40px rgba(0, 0, 0, .16);
-    object-fit: cover;
+    object-fit: contain;
+    background: transparent;
+}
+
+.hero-float-tooltip {
+    position: absolute;
+    left: 50%;
+    top: -0.4rem;
+    transform: translate(-50%, -100%) rotate(var(--float-rotate, 0deg));
+    opacity: 0;
+    pointer-events: none;
+    padding: .45rem .6rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: .65rem;
+    background: rgba(10, 10, 10, 0.92);
+    color: #f5f5f5;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: .72rem;
+    line-height: 1.15;
+    white-space: nowrap;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .28);
+    z-index: 3;
+    transition: opacity .2s ease, transform .24s cubic-bezier(.2, .8, .2, 1);
+}
+
+.hero-float-item:hover .hero-float-tooltip,
+.hero-float-item:focus-within .hero-float-tooltip,
+.hero-float-item.is-hovered .hero-float-tooltip {
+    opacity: 1;
+    transform: translate(-50%, -120%) rotate(var(--float-rotate, 0deg));
 }
 
 .hero-float-item:hover {

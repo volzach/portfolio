@@ -14,6 +14,8 @@ if (floatingLayer) {
     const driftY = Number(item.dataset.driftY || 0);
     const duration = Number(item.dataset.duration || 7);
     const amplitude = Number(item.dataset.amplitude || 1);
+    const image = item.querySelector('img');
+    const altText = image?.getAttribute('alt')?.trim() || '';
 
     item.style.setProperty('--float-left', left);
     item.style.setProperty('--float-top', top);
@@ -24,6 +26,13 @@ if (floatingLayer) {
     item.style.setProperty('--float-drift-y', `${driftY * amplitude}px`);
     item.style.setProperty('--float-duration', `${duration}s`);
     item.style.setProperty('--float-index', String(index));
+
+    if (altText && !item.querySelector('.hero-float-tooltip')) {
+      const tooltip = document.createElement('span');
+      tooltip.className = 'hero-float-tooltip';
+      tooltip.textContent = altText;
+      item.appendChild(tooltip);
+    }
   });
 
   let lastTime = 0;
