@@ -218,9 +218,8 @@
     top: var(--float-top, 0%);
     width: var(--float-width, 160px);
     transform: translate3d(0, 0, 0) rotate(var(--float-rotate, 0deg));
-    transition: filter .2s ease;
+    transition: transform .2s ease, opacity .2s ease;
     isolation: isolate;
-    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.18));
 }
 
 .hero-float-item img {
@@ -265,7 +264,6 @@
 .hero-float-item:focus-within,
 .hero-float-item.is-hovered {
     transform: translate3d(0, 0, 0) rotate(var(--float-rotate, 0deg)) scale(1.04);
-    filter: brightness(1.05);
 }
 
 /* ===========================
