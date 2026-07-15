@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/snap-indicator.css">
     <link rel="stylesheet" href="assets/css/animations.css">
 
 </head>
@@ -52,6 +53,12 @@
         </div>
 
     </header>
+
+    <div class="snap-indicator" data-snap-indicator aria-live="polite" role="status">
+        <div class="snap-indicator__core" aria-hidden="true">
+            <span class="snap-indicator__arrow">↓</span>
+        </div>
+    </div>
 
     <main>
 
@@ -222,6 +229,7 @@
     </main>
 
     <script src="assets/js/hero-floats.js"></script>
+    <script src="assets/js/snap-indicator.js"></script>
     <script src="assets/js/snap.js"></script>
     <script src="assets/js/navbar.js"></script>
 
