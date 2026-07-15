@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/snap-indicator.css">
     <link rel="stylesheet" href="assets/css/animations.css">
 
 </head>
@@ -54,29 +53,23 @@
 
     </header>
 
-    <div class="snap-indicator" data-snap-indicator aria-live="polite" role="status">
-        <div class="snap-indicator__core" aria-hidden="true">
-            <span class="snap-indicator__arrow">↓</span>
-        </div>
-    </div>
-
     <main>
 
         <!-- HERO -->
         <section class="hero snap-section" id="snap-section-1">
 
-            <div class="hero__floating-layer" aria-hidden="true">
+            <div class="hero__floating-layer section-floating-layer" aria-hidden="true">
                 <figure class="hero-float-item" data-left="60%" data-top="21%" data-width="240" data-rotate="0deg"
                     data-opacity="0.95" data-drift-x="-3" data-drift-y="2" data-duration="8.5">
                     <img src="projects\for-hero\pfp.png" alt="Zach">
                 </figure>
 
-                <figure class="hero-float-item" data-left="8%" data-top="12%" data-width="180" data-rotate="-8deg"
+                <figure class="hero-float-item" data-left="8%" data-top="12%" data-width="165" data-rotate="-8deg"
                     data-opacity="0.92" data-drift-x="11" data-drift-y="8" data-duration="8.5">
                     <img src="projects\for-hero\srapp.png" alt="NSMBW Resources app">
                 </figure>
 
-                <figure class="hero-float-item" data-left="83%" data-top="12%" data-width="135" data-rotate="10deg"
+                <figure class="hero-float-item" data-left="83%" data-top="12%" data-width="120" data-rotate="10deg"
                     data-opacity="0.95" data-drift-x="-9" data-drift-y="5" data-duration="6.2">
                     <img src="projects\for-hero\wesound.png" alt="WeSound">
                 </figure>
@@ -182,13 +175,24 @@
         </section>
 
         <section class="about snap-section 3" id="about">
-
+            <div class="section-floating-layer" aria-hidden="true">
+                <figure class="hero-float-item" data-left="32%" data-top="31%" data-width="36" data-rotate="6deg"
+                    data-opacity="0.82" data-drift-x="-1" data-drift-y="2" data-duration="8.5">
+                    <img src="projects/for-hero/hat.png" alt="It's-a-me">
+                </figure>
+            </div>
+            <div class="section-floating-layer" aria-hidden="true">
+                <figure class="hero-float-item" data-left="68%" data-top="56%" data-width="195" data-rotate="15deg"
+                    data-opacity="0.8" data-drift-x="2" data-drift-y="4" data-duration="6.8">
+                    <img src="projects/for-hero/kaynzach.png" alt="Wife and I">
+                </figure>
+            </div>
             <div class="container container--narrow">
 
                 <h2 class="project-card__title">About Zach</h2>
 
                 <p class="project-card__description">
-                    I am a passionate digital designer based in the Phoenix area with my wife and two kitties.
+                    I am a passionate digital designer based in the Phoenix area with my wife and two cats.
                     <br><br>I create digital assets ranging from logos, thumbnails, social media graphics, handdrawn UI
                     elements, and video game sprites.
                     <br><br>I also have collegiate experience in C++, python, and Java!<br>
@@ -203,7 +207,12 @@
         </section>
 
         <section class="contact snap-section 4" id="contact">
-
+            <div class="section-floating-layer" aria-hidden="true">
+                <figure class="hero-float-item" data-left="18%" data-top="24%" data-width="140" data-rotate="-10deg"
+                    data-opacity="0.72" data-drift-x="3" data-drift-y="-3" data-duration="7.4">
+                    <img src="projects/for-hero/wesound.png" alt="WeSound logo">
+                </figure>
+            </div>
             <div class="container container--narrow">
 
                 <h2 class="project-card__title">Contact</h2>
@@ -216,7 +225,7 @@
                 <p>Socials:<br>
                     <a href="https://www.linkedin.com/in/zach-vollmer/" target="_blank"
                         rel="noopener noreferrer">LinkedIn</a><br>
-                    <a href="https://discordapp.com/users/v0lza" target="_blank" rel="noopener noreferrer">Discord</a>
+                    <a href="https://discordapp.com/users/v0lza" target="_blank" rel="noopener noreferrer">Discord</a><br>
                     <a href="https://www.instagram.com/vol.zach/" target="_blank"
                         rel="noopener noreferrer">Instagram</a><br>
                 </p>
@@ -229,7 +238,6 @@
     </main>
 
     <script src="assets/js/hero-floats.js"></script>
-    <script src="assets/js/snap-indicator.js"></script>
     <script src="assets/js/snap.js"></script>
     <script src="assets/js/navbar.js"></script>
 

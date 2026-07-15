@@ -1,10 +1,7 @@
-const floatingLayer = document.querySelector('.hero__floating-layer');
+const floatingLayers = Array.from(document.querySelectorAll('.hero__floating-layer, .section-floating-layer'));
 
-if (floatingLayer) {
-  const heroSection = document.querySelector('.hero');
-  const floatItems = [...document.querySelectorAll('.hero-float-item')];
-
-  floatItems.forEach((item, index) => {
+if (floatingLayers.length > 0) {
+  const setupItem = (item, index) => {
     const left = item.dataset.left || '0%';
     const top = item.dataset.top || '0%';
     const width = item.dataset.width || '160';
@@ -16,6 +13,7 @@ if (floatingLayer) {
     const amplitude = Number(item.dataset.amplitude || 1);
     const image = item.querySelector('img');
     const altText = image?.getAttribute('alt')?.trim() || '';
+
 
     item.style.setProperty('--float-left', left);
     item.style.setProperty('--float-top', top);
@@ -37,32 +35,53 @@ if (floatingLayer) {
     item.addEventListener('mouseenter', () => item.classList.add('is-hovered'));
     item.addEventListener('mouseleave', () => item.classList.remove('is-hovered'));
     item.addEventListener('focus', () => item.classList.add('is-hovered'));
-    item.addEventListener('blur', () => item.classList.remove('is-hovered'));
+  };
+
+  floatingLayers.forEach((layer) => {
+    const items = Array.from(layer.querySelectorAll('.hero-float-item'));
+    items.forEach((item, index) => setupItem(item, index));
   });
 
   let lastTime = 0;
 
   const updateMotion = (timestamp) => {
-    const rect = heroSection?.getBoundingClientRect();
-    const scrollProgress = rect
-      ? Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight))
-      : 0;
-
     const elapsed = (timestamp - (lastTime || timestamp)) / 1000;
     lastTime = timestamp;
 
-    floatItems.forEach((item, index) => {
-      const driftX = Number(item.dataset.driftX || 0);
-      const driftY = Number(item.dataset.driftY || 0);
-      const duration = Number(item.dataset.duration || 7);
-      const amplitude = Number(item.dataset.amplitude || 1);
-      const wave = Math.sin((timestamp / 1000 / duration) * Math.PI * 2 + index * 0.8);
-      const parallaxX = scrollProgress * 24 * (index % 2 === 0 ? 1 : -1);
-      const parallaxY = scrollProgress * 8 * (index % 2 === 0 ? 0.4 : -0.4);
-      const x = driftX * amplitude * wave + parallaxX;
-      const y = driftY * amplitude * Math.cos((timestamp / 1000 / duration) * Math.PI * 2 + index * 0.8) + parallaxY;
+    floatingLayers.forEach((layer) => {
+      const section = layer.closest('section, .section');
+      const rect = section?.getBoundingClientRect();
+      const scrollProgress = rect
+        ? Math.max(0, Math.min(1, 1 - rect.top / window.innerHeight))
+        : 0;
+      const items = Array.from(layer.querySelectorAll('.hero-float-item'));
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+      const isMobile = viewportWidth <= 768;
+      const contentRect = section?.querySelector('.container, .container--narrow')?.getBoundingClientRect();
 
-      item.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${item.style.getPropertyValue('--float-rotate') || '0deg'})`;
+      items.forEach((item, index) => {
+        const driftX = Number(item.dataset.driftX || 0);
+        const driftY = Number(item.dataset.driftY || 0);
+        const duration = Number(item.dataset.duration || 7);
+        const amplitude = Number(item.dataset.amplitude || 1);
+        const wave = Math.sin((timestamp / 1000 / duration) * Math.PI * 2 + index * 0.8);
+        const parallaxX = scrollProgress * 24 * (index % 2 === 0 ? 1 : -1);
+        const parallaxY = scrollProgress * 8 * (index % 2 === 0 ? 0.4 : -0.4);
+        const x = driftX * amplitude * wave + parallaxX;
+        const y = driftY * amplitude * Math.cos((timestamp / 1000 / duration) * Math.PI * 2 + index * 0.8) + parallaxY;
+        const rotate = item.style.getPropertyValue('--float-rotate') || '0deg';
+        const baseWidth = Number(item.dataset.width || 160);
+        const responsiveWidth = Math.min(baseWidth * (isMobile ? 0.7 : 1), viewportWidth * (isMobile ? 0.28 : 0.38));
+        const responsiveScale = isMobile ? 0.72 : 1;
+        const itemRect = item.getBoundingClientRect();
+        const overlap = contentRect
+          ? !(itemRect.right < contentRect.left || itemRect.left > contentRect.right || itemRect.bottom < contentRect.top || itemRect.top > contentRect.bottom)
+          : false;
+
+        item.style.setProperty('--float-width', `${responsiveWidth}px`);
+        item.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotate}) scale(${responsiveScale})`;
+        item.style.filter = overlap ? 'blur(0px)' : 'none';});
     });
 
     requestAnimationFrame(updateMotion);
